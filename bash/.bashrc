@@ -37,8 +37,8 @@ if [ -f ~/.functions ]; then
     source ~/.functions
 fi
 
-if [ -f ~/git-completion.bash ]; then
-	source ~/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+	source ~/.git-completion.bash
 fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 color_my_prompt
