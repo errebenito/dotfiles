@@ -1,0 +1,64 @@
+# Compiled source
+*.elc
+*.pyc
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.a
+*.so
+.build/*
+!*.com/
+
+# Packages
+*.7z
+*.jar
+*.war
+*.ear
+*.rar
+*.zip
+*.gz
+*.bzip
+*.bz2
+*.xz
+*.lzma
+*.iso
+*.tar
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+
+## Eclipse
+.project
+.settings
+.metadata
+.classpath
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.dvi
+
+# Git
+*.diff
+.orig
+
+# Logs and databases 
+*.log
+*.sql
+*.sqlite
+
+#Misc
+*.bak
+*.cache
+*.log
+*~
+*#

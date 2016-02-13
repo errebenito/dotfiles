@@ -1,0 +1,39 @@
+[user]
+	email = erre.benito@gmail.com
+	name = Raúl Benito
+[core]
+	excludesFile = ~/.gitignore_global
+
+[credential]
+	helper = cache
+
+[alias]
+	a = add
+	b = branch
+	c = commit --verbose
+	co = checkout
+	d = diff
+	ds = diff --staged
+	du = count-objects --verbose --human-readable
+	f = fetch
+	h = help
+	hc = help config
+	l = log
+	lol = log --graph --pretty=oneline
+	m = merge
+	nuke = !git clean -fdx && git submodule foreach git clean -fdx
+	p = pull
+	ps = push
+	r = reset
+	rb = rebase
+	redo = commit --amend --no-edit
+	s = status --short --branch
+	sh = show
+	st = stash
+	stat = status
+	sub = submodule
+	y = cherry-pick
+
+[color]
+	ui = auto
+

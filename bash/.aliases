@@ -1,0 +1,139 @@
+##ALIASES
+
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+ 
+## Use a long listing format ##
+alias ll='ls -la --color=auto'
+ 
+## Show hidden files ##
+alias lsd='ls -d .* --color=auto'
+
+## Get rid of command not found ##
+alias cd..='cd ..'
+
+## navigate directory tree upwards 
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+## Create parent directories on demand
+alias mkdir='mkdir -pv'
+
+## Make mount command output pretty and human readable format
+alias mount='mount | column -t'
+
+## Stop after sending 4 packets #
+alias ping='ping -c 4'
+
+## Do not wait between requests
+alias fastping='ping -c 100 -s.2'
+
+## Do not delete / or prompt if deleting more than 3 files at a time 
+alias rm='rm -I --preserve-root'
+
+## Confirmation for copy, move and link operations
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+ 
+## Parenting changing perms on / 
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Zypper aliases
+alias refresh='sudo zypper ref'
+alias update='refresh && sudo zypper up'
+alias upgrade='refresh && sudo zypper dup'
+
+## Pass options to free ## 
+alias meminfo='free -mlt'
+ 
+## Get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## Make process table searchable
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" 
+
+
+## Get top process eating cpu
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+## Aliases for df and du
+alias df='df -Tha --total'
+alias du='du -ach | sort -h'
+
+# add and remove new/deleted files from git index automatically
+alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
+# git push
+alias gpom="git push origin master"
+# Remove git from a project
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+
+#Git aliases
+alias gcl='git clone'
+alias ga='git add'
+alias gall='git add -A'
+alias gf='git fetch --all --prune --verbose'
+alias gft='git fetch --all --prune --tags --verbose'
+alias gus='git reset HEAD'
+alias gm="git merge"
+alias g='git'
+alias get='git'
+alias gst='git status'
+alias gs='git status'
+alias gss='git status -s'
+alias gsu='git submodule update --init --recursive'
+alias gl='git pull'
+alias gpr='git pull --rebase'
+alias gpp='git pull && git push'
+alias gup='git fetch && git rebase'
+alias gp='git push'
+alias gpo='git push origin'
+alias gpu='git push --set-upstream'
+alias gpom='git push origin master'
+alias gdv='git diff -w "$@" | vim -R -'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gcm='git commit -v -m'
+alias gci='git commit --interactive'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbt='git branch --track'
+alias gcount='git shortlog -sn'
+alias gcp='git cherry-pick'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gct='git checkout --track'
+alias gexport='git archive --format zip --output'
+alias gdel='git branch -D'
+alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
+alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gg="git log --graph --pretty=format:'%C(bold)%h%Creset%C(yellow)%d%Creset %s %C(yellow)%an %C(cyan)%cr%Creset' --abbrev-commit --date=relative"
+alias ggs="gg --stat"
+alias gsl="git shortlog -sn"
+alias gw="git whatchanged"
+alias gt="git tag"
+alias gta="git tag -a"
+alias gtd="git tag -d"
+alias gtl="git tag -l"
+
+# Show commits since last pull
+alias gnew="git log HEAD@{1}..HEAD@{0}"
+
+# Bundler aliases
+alias be='bundle exec'
+alias bi='bundle install'
+alias bl='bundle list'
+alias bu='bundle update'
+alias bp='bundle package'
+
