@@ -55,9 +55,6 @@
 ## sentences.
  set punct "!.?"
 
-## Fix Backspace/Delete confusion problem.
- set rebinddelete
-
 ## Fix numeric keypad key confusion problem.
  set rebindkeypad
 
@@ -73,9 +70,6 @@
 
 ## Use this tab size instead of the default; it must be greater than 0.
  set tabsize 4
-
-## Disallow file modification.  Why would you want this in an rcfile? ;)
-# set view
 
 ## Detect word boundaries more accurately by treating punctuation
 ## characters as parts of words.

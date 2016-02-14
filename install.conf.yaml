@@ -1,4 +1,5 @@
-- clean: ['~']
+- clean: 
+    ['~']
 
 - link:
     ~/.bashrc: 
@@ -22,6 +23,9 @@
     ~/.gitignore_global:
         relink: true
         path: git/.gitignore_global
+    ~/.git-completion.bash:
+        relink: true
+        path: git/.git-completion.bash
     ~/.nanorc:
         relink: true
         path: nano/.nanorc
