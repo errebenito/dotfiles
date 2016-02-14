@@ -137,3 +137,5 @@ alias bl='bundle list'
 alias bu='bundle update'
 alias bp='bundle package'
 
+#Make aliases
+alias mkc='make clean'
