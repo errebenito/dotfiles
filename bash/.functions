@@ -61,7 +61,13 @@ fi
 }
 
 function color_my_prompt {
-    local __user_and_host="\[\033[01;32m\]\u@\h"
+	userid=`id -u`
+	if [ "$userid"  = "0" ]; 
+	then
+	    local __user_and_host="\[\033[01;31m\]\u@\h";
+	else
+		local __user_and_host="\[\033[01;32m\]\u@\h";
+	fi    
     local __cur_location="\[\033[01;34m\][\w]"
     local __git_info_color="\[\033[31m\]"
     local __git_info='`__git_ps1 " {%s}"`'

@@ -35,6 +35,9 @@ alias ping='ping -c 4'
 ## Do not wait between requests
 alias fastping='ping -c 100 -s.2'
 
+## Preserve the environment while using root
+alias su='su -m'
+
 ## Do not delete / or prompt if deleting more than 3 files at a time 
 alias rm='rm -I --preserve-root'
 
