@@ -1,0 +1,96 @@
+[alias]
+    a = add
+    ac = !"git add --patch; git commit"
+    aliases = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
+    au = add --update .
+    b = branch
+    bl = branch -avv --list
+    branch-name = !"git rev-parse --abbrev-ref HEAD"
+    c = commit
+    ca = commit --amend --no-edit
+    clean = "!f() { echo 'Remove following files?'; echo; git clean -dn; echo; echo 'Press ENTER to confirm'; read -p 'Press ^C to stop cleanup and exit' a && git clean -df; }; f"
+    cm = commit --message
+    co = checkout
+    cp = cherry-pick
+    cp-nx = cherry-pick --no-commit -x
+    d = diff
+    diff-all = !"for name in $(git diff --name-only $1); do git difftool $1 $name & done"
+    diff-changes = diff --name-status -r
+    diff-stat = diff --stat -b -r
+    diff-staged = diff --cached
+    f = fetch
+    fa = fetch --all
+    ff = "!f(){ B=$(git rev-parse --abbrev-ref HEAD) && git merge --ff-only origin/$B; };f"
+    fix = "!f(){ git reset --hard origin/`git rev-parse --abbrev-ref HEAD`; rm -rfv `git status --short | grep ^? | cut -d' '  -f2-`; }; f"
+    fp = fetch --prune
+    g = grep
+    grep-all = !"git rev-list --all | xargs git grep '$1'"
+    head = !"git log -n1"
+    heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
+    k = "!f(){ gitk HEAD origin/`git rev-parse --abbrev-ref HEAD`; };f"
+    l = log
+    ls = log --pretty=format:'%C(green)%h%Creset - %s%C(yellow)%d%Creset%n          %aD (%ar %C(red)- %an%Creset)' --graph --color
+    ll = log --pretty=format:'%C(green)%h%Creset - %s%C(yellow)%d%Creset%n          %aD (%ar %C(red)- %an%Creset)' --graph --color --all
+    lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+    ls = ls-files
+    ls-ignored = ls-files --others --i --exclude-standard
+    m = merge
+    me = merge --no-ff
+    mkbranch = "!f(){ git checkout -b ${1} && git push origin -u ${1}; };f"
+    mm = merge --no-ff -
+    mt = mergetool
+    p = pull
+    puff = "push --force-with-lease"
+    r = remote
+    reset-hard = !git reset --hard
+    reset-hard-clean = !git reset --hard && git clean -fd
+    reset-commit = !git reset --soft HEAD^
+    reset-add = !git reset HEAD
+    reset-stage = !git reset HEAD
+    rp = remote prune
+    rs = remote show
+    ru = remote update
+    rv = revert
+    rvnc = revert --no-commit
+    rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
+    s = status
+    sb = show-branch
+    sl = stash list
+    sll = "!f() { for s in `git stash list --pretty=format:%gd`; do git stash show -p $s; done; };f"
+    sm = submodule
+    smu = submodule update --init --recursive
+    ss = "stash show stash@{0} -p"
+    ssb = status --short --branch
+    stash-stage = "!f(){ git stash -- $(git diff --name-only --staged); }; f"
+    sup = submodule update
+    tags = tag -n1 -l
+    unadd = reset HEAD
+    uncommit = reset --soft HEAD^
+    undo = reset --hard
+    undoclean = !git reset --hard && git clean -fd
+    unstage = reset HEAD
+    unstash = stash pop
+    up = "pull --ff-only --stat --prune"
+    w = whatchanged
+
+[color]
+    ui = auto
+
+[core]
+    excludesFile = ~/.gitignore_global
+    pager = less -R
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[credential]
+    helper = cache
+
+[init]
+    defaultBranch = main
+
+[merge]
+    conflictstyle = diff3
+    tool = meld
+
+[user]
+    email = erre.benito@gmail.com
+    name = Raúl Benito

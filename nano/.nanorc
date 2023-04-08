@@ -1,0 +1,88 @@
+## When soft line wrapping is enabled, make it wrap lines at blank characters
+## (tabs and spaces) instead of always at the edge of the screen.
+set atblanks
+
+## Automatically indent a newly created line to the same number of tabs and/or
+## spaces as the previous line (or as the next line if the previous line is the
+## beginning of a paragraph).
+set autoindent
+
+##Set the characters treated as closing brackets when justifying paragraphs.
+set brackets ""')>]}"
+
+##Automatically hard-wrap the current line when it becomes overlong.
+set breaklonglines
+
+## Do case-sensitive searches by default.
+set casesensitive
+
+## Constantly display the cursor position in the statusbar.
+set constantshow
+
+## Use cut-to-end-of-line by default.
+set cutfromcursor
+
+## Do not use the line below the title bar, leaving it entirely blank.
+set emptyline
+
+## Colors
+set errorcolor bold,white,red
+set functioncolor yellow
+set keycolor green
+set numbercolor green
+set promptcolor green,white
+set spotlightcolor black,lightyellow
+set statuscolor bold,white,green
+set titlecolor bold,white,blue
+
+## Set the target width for justifying and automatic hard-wrapping at this
+## number of columns. If the value is 0 or less, wrapping will occur at the
+## width of the screen minus number columns.
+set fill -8
+
+## Enable ~/.nano_history for saving and reading search/replace strings.
+set historylog
+
+## Display line numbers to the left of the text area.
+set linenumbers
+
+## Specify the opening and closing brackets that can be found by bracket searches.
+set matchbrackets "(<[{)>]}"
+
+## Enable mouse support.
+set mouse
+
+## When reading in a file with ^R, insert it into a new buffer by default.
+set multibuffer
+
+## Don't add newlines to the ends of files.
+set nonewlines
+
+## Remember the cursor position in each file for the next editing session.
+set positionlog
+
+## Preserve the XON and XOFF keys (^Q and ^S).
+set preserve
+
+## The characters treated as closing punctuation when justifying paragraphs.
+set punct "!.?"
+
+## Make the Home key smarter.
+set smarthome
+
+## Display lines that exceed the screen’s width over multiple screen lines.
+set softwrap
+
+## Use this tab size instead of the default; it must be greater than 0.
+set tabsize 4
+
+## Convert each typed tab to spaces
+set tabstospaces
+
+## Detect word boundaries more accurately.
+set wordbounds
+
+## Setup of syntax coloring.
+## Include all existing syntax definitions
+ include "/usr/share/nano/*.nanorc"
+ 

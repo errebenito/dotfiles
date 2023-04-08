@@ -1,0 +1,36 @@
+- clean: 
+    ['~']
+
+- link:
+    ~/.bashrc: 
+        relink: true
+        path: bash/.bashrc
+    ~/.aliases: 
+        relink: true
+        path: bash/.aliases
+    ~/.functions:
+        relink: true
+        path: bash/.functions
+    ~/.inputrc:
+        relink: true
+        path: bash/.inputrc
+    ~/.profile:
+        relink: true
+        path: bash/.profile
+    ~/.gitconfig:
+        relink: true
+        path: git/.gitconfig
+    ~/.gitignore_global:
+        relink: true
+        path: git/.gitignore_global
+    ~/.git-completion.bash:
+        relink: true
+        path: git/.git-completion.bash
+    ~/.nanorc:
+        relink: true
+        path: nano/.nanorc
+
+- shell:
+    -
+      - "git submodule update --init --recursive"
+      - "Installing/updating submodules"

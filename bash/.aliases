@@ -1,0 +1,87 @@
+##ALIASES ##
+
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+ 
+## Use a long listing format ##
+alias ll='ls -la --color=auto'
+ 
+## Show hidden files ##
+alias lsd='ls -d .* --color=auto'
+
+## Get rid of command not found ##
+alias cd..='cd ..'
+
+## navigate directory tree upwards ##
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+
+## Colorize the grep command output for ease of use (good for log files) ##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+## Create parent directories on demand ##
+alias mkdir='mkdir -pv'
+
+## Make mount command output pretty and human readable format ##
+alias mount='mount | column -t'
+
+## Stop after sending 4 packets ##
+alias ping='ping -c 4'
+
+## Do not wait between requests ##
+alias fastping='ping -c 100 -s.2'
+
+## Preserve the environment while using root ##
+alias su='su -m'
+
+## Do not delete / or prompt if deleting more than 3 files at a time ##
+alias rm='rm -I --preserve-root'
+
+## Confirmation for copy, move and link operations ##
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+ 
+## Parenting changing perms on / ##
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Zypper aliases ##
+alias refresh='sudo zypper ref'
+alias update='refresh && sudo zypper up'
+alias upgrade='refresh && sudo zypper dup'
+
+## Pass options to free ##
+alias meminfo='free -mlt'
+ 
+## Get top process eating memory ##
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+## Make process table searchable ##
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" 
+
+## Get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+## Aliases for df and du ##
+alias df='df -Tha --total'
+alias du='du -ach | sort -h'
+
+## add and remove new/deleted files from git index automatically ##
+alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
+
+## git push ##
+alias gpom="git push origin master"
+
+## Remove git from a project ##
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+
+# Show commits since last pull
+alias gnew="git log HEAD@{1}..HEAD@{0}"
