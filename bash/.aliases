@@ -78,7 +78,7 @@ alias du='du -ach | sort -h'
 alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
 
 ## git push ##
-alias gpom="git push origin master"
+alias gpom="git push origin main"
 
 ## Remove git from a project ##
 alias ungit="find . -name '.git' -exec rm -rf {} \;"

@@ -26,7 +26,7 @@
     g = grep
     grep-all = !"git rev-list --all | xargs git grep '$1'"
     head = !"git log -n1"
-    heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
+    heads = !"git log origin/main.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
     k = "!f(){ gitk HEAD origin/`git rev-parse --abbrev-ref HEAD`; };f"
     l = log
     ls = log --pretty=format:'%C(green)%h%Creset - %s%C(yellow)%d%Creset%n          %aD (%ar %C(red)- %an%Creset)' --graph --color
