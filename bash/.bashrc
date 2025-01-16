@@ -1,5 +1,3 @@
-export EDITOR=/usr/bin/nano
-
 ## HISTORY
 HISTCONTROL=ignoreboth
 # Unset for unlimited history
@@ -26,6 +24,10 @@ fi
 
 if [ -f ~/.git-completion.bash ]; then
 	source ~/.git-completion.bash
+fi
+
+if [ -f ~/.secrets ]; then
+    source ~/.secrets
 fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 color_my_prompt
